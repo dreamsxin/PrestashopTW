@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>gamification</name>
+    <displayName><![CDATA[店主專業知識]]></displayName>
+    <version><![CDATA[2.0.0]]></version>
+    <description><![CDATA[在眨眼間躋身為電子商務專家！]]></description>
+    <author><![CDATA[PrestaShop]]></author>
+    <tab><![CDATA[administration]]></tab>
+    <is_configurable>1</is_configurable>
+    <need_instance>1</need_instance>
+	<limited_countries></limited_countries>
+</module>

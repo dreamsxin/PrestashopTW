@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>ps_checkpayment</name>
+    <displayName><![CDATA[以支票付款]]></displayName>
+    <version><![CDATA[2.0.3]]></version>
+    <description><![CDATA[這個模組允許您接受以支票付款。]]></description>
+    <author><![CDATA[PrestaShop]]></author>
+    <tab><![CDATA[payments_gateways]]></tab>
+	<confirmUninstall><![CDATA[確定要刪除這些細節？]]></confirmUninstall>
+    <is_configurable>1</is_configurable>
+    <need_instance>1</need_instance>
+	<limited_countries></limited_countries>
+</module>

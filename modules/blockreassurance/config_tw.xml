@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+    <name>blockreassurance</name>
+    <displayName><![CDATA[讓客戶放心]]></displayName>
+    <version><![CDATA[3.0.1]]></version>
+    <description><![CDATA[新增一個資訊區塊協助提供實用資訊來讓客戶覺得您的商店值得信任。]]></description>
+    <author><![CDATA[PrestaShop]]></author>
+    <tab><![CDATA[]]></tab>
+    <is_configurable>1</is_configurable>
+    <need_instance>1</need_instance>
+	<limited_countries></limited_countries>
+</module>
