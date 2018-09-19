@@ -2,7 +2,7 @@
 <module>
     <name>ps_mainmenu</name>
     <displayName><![CDATA[主選單]]></displayName>
-    <version><![CDATA[2.1.0]]></version>
+    <version><![CDATA[2.1.1]]></version>
     <description><![CDATA[在網站上方顯示一個新選單。]]></description>
     <author><![CDATA[PrestaShop]]></author>
     <tab><![CDATA[front_office_features]]></tab>

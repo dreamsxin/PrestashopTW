@@ -261,7 +261,7 @@
 </tab>
 <tab class_name="AdminPayment" display_type="default_list">
 <module name="secureframe" position="1"/>
-<module name="paypal" position="2"/>
+<module name="paypal" position="13"/>
 <module name="mercadopagobr" position="3"/>
 <module name="payulatam" position="4"/>
 <module name="dotpay" position="5"/>
@@ -272,14 +272,14 @@
 <module name="simplifycommerce" position="10"/>
 <module name="klarnaofficial" position="11"/>
 <module name="spsrsmartsepa" position="12"/>
-<module name="oyst" position="13"/>
-<module name="ewayrapid" position="14"/>
-<module name="fcpayone" position="15"/>
-<module name="pagseguro" position="16"/>
-<module name="ewayrapid" position="17"/>
-<module name="hipay" position="18"/>
-<module name="ogone" position="19"/>
-<module name="payplug" position="20"/>
+<module name="payplug" position="2"/>
+<module name="oyst" position="14"/>
+<module name="ewayrapid" position="15"/>
+<module name="fcpayone" position="16"/>
+<module name="pagseguro" position="17"/>
+<module name="ewayrapid" position="18"/>
+<module name="hipay" position="19"/>
+<module name="ogone" position="20"/>
 <module name="realexredirect" position="21"/>
 <module name="stripe_official" position="22"/>
 <module name="skrill" position="23"/>

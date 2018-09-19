@@ -2,7 +2,7 @@
 <module>
     <name>ps_emailsubscription</name>
     <displayName><![CDATA[訂閱電子通訊]]></displayName>
-    <version><![CDATA[2.1.0]]></version>
+    <version><![CDATA[2.3.0]]></version>
     <description><![CDATA[新增一張訂閱電子報的表格。]]></description>
     <author><![CDATA[PrestaShop]]></author>
     <tab><![CDATA[]]></tab>

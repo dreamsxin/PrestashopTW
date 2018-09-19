@@ -45,7 +45,7 @@ class Ps_Emailsubscription extends Module implements WidgetInterface
         $this->name = 'ps_emailsubscription';
         $this->need_instance = 0;
 
-        $this->controllers = array('verification');
+        $this->controllers = array('verification', 'subscription');
 
         $this->bootstrap = true;
         parent::__construct();
@@ -57,7 +57,7 @@ class Ps_Emailsubscription extends Module implements WidgetInterface
 
         $this->entity_manager = $entity_manager;
 
-        $this->version = '2.1.0';
+        $this->version = '2.3.0';
         $this->author = 'PrestaShop';
         $this->error = false;
         $this->valid = false;
@@ -98,6 +98,9 @@ class Ps_Emailsubscription extends Module implements WidgetInterface
                     'actionCustomerAccountAdd',
                     'additionalCustomerFormFields',
                     'displayAdminCustomersForm',
+                    'registerGDPRConsent',
+                    'actionDeleteGDPRCustomer',
+                    'actionExportGDPRData'
                 )
             )
         ) {
@@ -330,7 +333,7 @@ class Ps_Emailsubscription extends Module implements WidgetInterface
     /**
      * Register in email subscription.
      */
-    protected function newsletterRegistration()
+    public function newsletterRegistration()
     {
         if (empty($_POST['email']) || !Validate::isEmail($_POST['email'])) {
             return $this->error = $this->trans('Invalid email address.', array(), 'Shop.Notifications.Error');
@@ -751,6 +754,7 @@ class Ps_Emailsubscription extends Module implements WidgetInterface
     public function renderWidget($hookName = null, array $configuration = [])
     {
         $this->smarty->assign($this->getWidgetVariables($hookName, $configuration));
+        $this->context->smarty->assign(array('id_module' => $this->id));
 
         return $this->fetch('module:ps_emailsubscription/views/templates/hook/ps_emailsubscription.tpl');
     }
@@ -1252,4 +1256,25 @@ class Ps_Emailsubscription extends Module implements WidgetInterface
 
         return $this->display(__FILE__, 'views/templates/admin/newsletter_subscribe.tpl');
     }
+
+    public function hookActionDeleteGDPRCustomer($customer)
+    {
+        if (!empty($customer['email']) && Validate::isEmail($customer['email'])) {
+            $sql = "DELETE FROM "._DB_PREFIX_."emailsubscription WHERE email = '".pSQL($customer['email'])."'";
+            if (Db::getInstance()->execute($sql)) {
+                return json_encode(true);
+            }
+            return json_encode($this->l('Newsletter subscription: Unable to delete customer using email.'));
+        }
+    }
+    public function hookActionExportGDPRData($customer)
+    {
+        if (!Tools::isEmpty($customer['email']) && Validate::isEmail($customer['email'])) {
+            $sql = "SELECT * FROM "._DB_PREFIX_."emailsubscription WHERE email = '".pSQL($customer['email'])."'";
+            if ($res = Db::getInstance()->ExecuteS($sql)) {
+                return json_encode($res);
+            }
+            return json_encode($this->l('Newsletter subscription: Unable to export customer using email.'));
+       }
+   }
 }

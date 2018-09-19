@@ -14,7 +14,7 @@
     'mailer_password' => NULL,
     'secret' => 'BPks1GXkvJwmOfMo7xhEO2COzzFTjLavIJkR0aVBYVhDqbIuONT9IHKF',
     'ps_caching' => 'CacheMemcache',
-    'ps_cache_enable' => false,
+    'ps_cache_enable' => 0,
     'ps_creation_date' => '2018-03-09',
     'locale' => 'en-US',
     'cookie_key' => 'JhyDHpGtp3GIT65ag5S3KI3FI6L17howfFt7L4dVo9vQ0UJevdkLQeo9',
